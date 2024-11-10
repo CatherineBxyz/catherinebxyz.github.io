@@ -8,9 +8,11 @@ thumbnails.forEach(thumb => {
     const largeImage = lightbox.querySelector("img");
     largeImage.src = src; // Set the large image source
     lightbox.style.display = "flex"; // Show the lightbox
+    document.body.classList.add("noscroll");
   });
 });
 
 lightbox.addEventListener("click", (event) => {
   lightbox.style.display = "none";
+  document.body.classList.remove("noscroll");
 });
